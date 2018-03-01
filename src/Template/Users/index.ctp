@@ -9,7 +9,10 @@
     <tr>
       <td><?php echo $user->first_name; ?> <?php echo $user->last_name; ?></td>
       <td><?php echo $user->created; ?></td>
-      <td><?php echo $this->Html->link('View', ['action' => 'view', $user->id]); ?></td>
+      <td>
+        <?php echo $this->Html->link('View', ['action' => 'view', $user->id]); ?>
+        <?php echo $this->Html->link('Edit', ['action' => 'edit', $user->id]); ?>
+      </td>
     </tr>
   <?php endforeach; ?>
 </table>
