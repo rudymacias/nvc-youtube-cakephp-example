@@ -13,3 +13,5 @@
     </tr>
   <?php endforeach; ?>
 </table>
+
+<p><?php echo $this->Html->link('Add new User', ['action' => 'add']); ?></p>
