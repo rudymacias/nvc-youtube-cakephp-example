@@ -13,7 +13,7 @@ class UsersController extends AppController
 
   public function view($id = null)
   {
-      $user = $this->Users->findById($id)->first();
+      $user = $this->Users->findById($id)->contain(['Videos'])->first();
       $this->set(compact('user'));
   }
 

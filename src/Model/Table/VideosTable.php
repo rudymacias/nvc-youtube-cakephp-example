@@ -4,11 +4,11 @@ namespace App\Model\Table;
 
 use Cake\ORM\Table;
 
-class UsersTable extends Table
+class VideosTable extends Table
 {
   public function initialize(array $config)
   {
-    $this->hasMany('Videos');
+    $this->belongsTo('Users');
     $this->addBehavior('Timestamp');
   }
 }
