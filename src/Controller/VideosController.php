@@ -28,6 +28,8 @@ class VideosController extends AppController
           }
           $this->Flash->error(__('Unable to add your video.'));
       }
+      $users = $this->Videos->Users->find('list');
+      $this->set('users', $users);
       $this->set('video', $video);
   }
 
@@ -42,7 +44,8 @@ class VideosController extends AppController
           }
           $this->Flash->error(__('Unable to update your video.'));
       }
-
+      $users = $this->Videos->Users->find('list');
+      $this->set('users', $users);
       $this->set('video', $video);
   }
 }

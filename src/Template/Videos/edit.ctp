@@ -9,7 +9,8 @@
         echo $this->Form->create($video);
           echo $this->Form->control('title', ['class' => 'form-control mb-3']);
           echo $this->Form->control('description', ['class' => 'form-control mb-3']);
-          echo $this->Form->control('url', ['type' => 'email', 'class' => 'form-control mb-3']);
+          echo $this->Form->control('url', ['type' => 'url', 'class' => 'form-control mb-3']);
+          echo $this->Form->control('user_id', ['type' => 'select', 'options' => $users, 'class' => 'form-control mb-3']);
           echo '<hr class="mb-4">';
           echo $this->Form->button('Save changes', ['class' => 'btn btn-danger btn-lg btn-block']);
         echo $this->Form->end();

@@ -9,6 +9,7 @@ class VideosTable extends Table
   public function initialize(array $config)
   {
     $this->belongsTo('Users');
+    $this->displayField('title');
     $this->addBehavior('Timestamp');
   }
 }
