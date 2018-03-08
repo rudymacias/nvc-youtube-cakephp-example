@@ -45,4 +45,16 @@ class UsersController extends AppController
 
       $this->set('user', $user);
   }
+
+  public function delete($id = null)
+  {
+      $this->request->allowMethod(['post', 'delete']);
+
+      $user = $this->Users->findById($id)->first();
+      if ($this->Users->delete($user)) {
+          $this->Flash->success(__('The {0} user has been deleted.', $user->first_name));
+          return $this->redirect(['action' => 'index']);
+      }
+  }
+
 }

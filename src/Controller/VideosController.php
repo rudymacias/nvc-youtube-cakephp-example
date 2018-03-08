@@ -48,4 +48,15 @@ class VideosController extends AppController
       $this->set('users', $users);
       $this->set('video', $video);
   }
+
+  public function delete($id = null)
+  {
+      $this->request->allowMethod(['post', 'delete']);
+
+      $video = $this->Videos->findById($id)->first();
+      if ($this->Videos->delete($video)) {
+          $this->Flash->success(__('The {0} video has been deleted.', $video->first_name));
+          return $this->redirect(['action' => 'index']);
+      }
+  }
 }

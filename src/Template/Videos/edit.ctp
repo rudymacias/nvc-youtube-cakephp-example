@@ -15,6 +15,12 @@
           echo $this->Form->button('Save changes', ['class' => 'btn btn-danger btn-lg btn-block']);
         echo $this->Form->end();
       ?>
+      <hr>
+      <?php echo $this->Form->postLink(
+        'Delete',
+        ['action' => 'delete', $video->id],
+        ['confirm' => 'Are you sure?', 'class' => 'btn btn-info btn-lg'])
+      ?>
     </div>
   </div>
 </div>
